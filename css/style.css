@@ -24,7 +24,7 @@ body {
     flex-direction: column;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 header {
     background: linear-gradient(90deg, var(--roxo-claro), var(--roxo-medio), var(--roxo-escuro));
     padding: 20px;
@@ -36,12 +36,12 @@ header h1 {
     margin-bottom: 15px;
 }
 
-/* NAV do HEADER */
+/* NAV PADRÃO */
 .header-nav {
     display: flex;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 12px;
 }
 
 .header-nav a {
@@ -52,22 +52,21 @@ header h1 {
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
-    font-size: 1rem;
 }
 
 .header-nav a:hover {
     background-color: var(--roxo-escuro);
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 main {
-    padding: 40px 20px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     flex: 1;
 }
 
-/* IMAGEM DA PÁGINA INICIAL */
+/* IMAGEM */
 .hero-img {
     width: 100%;
     max-width: 450px;
@@ -86,54 +85,31 @@ main {
     box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer {
     text-align: center;
     background-color: var(--roxo-escuro);
-    padding: 40px 0;
-    width: 100%;
+    padding: 35px 0;
 }
 
-/* NAV DO FOOTER */
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.footer-nav a {
-    background-color: var(--roxo-claro);
-    padding: 12px 22px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.footer-nav a:hover {
-    background-color: var(--roxo-medio);
-}
-
-/* ================= CAIXA DO TREINO ================= */
+/* CAIXA DE TREINO */
 .box-treino {
     background-color: var(--roxo-medio);
     padding: 25px;
     border-radius: 12px;
-    width: 100%;
+    width: 95%;
     max-width: 900px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     overflow-x: auto;
 }
 
-/* ================= TABELA ================= */
+/* TABELA */
 table {
     width: 100%;
     border-collapse: collapse;
     color: white;
     table-layout: fixed;
-    font-size: 1.2rem;
+    font-size: 20px;
 }
 
 th, td {
@@ -145,7 +121,7 @@ th, td {
 }
 
 /* IMAGENS DA TABELA */
-table td img {
+table img {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -154,41 +130,26 @@ table td img {
     margin: 0 auto;
 }
 
-/* ================= RESPONSIVIDADE ================= */
-
-/* Tablet e celulares maiores */
+/* RESPONSIVIDADE DO HEADER */
 @media (max-width: 768px) {
-
-    header h1 {
-        font-size: 1.7rem;
-    }
-
-    .header-nav a {
-        padding: 8px 14px;
-        font-size: 0.9rem;
-    }
-
-    table {
-        font-size: 1rem;
-    }
-
-    table td img {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-/* Celulares pequenos */
-@media (max-width: 480px) {
 
     header {
         padding: 15px;
     }
 
     header h1 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         margin-bottom: 10px;
     }
+
+    .header-nav a {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* TELAS MUITO PEQUENAS */
+@media (max-width: 480px) {
 
     .header-nav {
         flex-direction: column;
@@ -197,15 +158,15 @@ table td img {
 
     .header-nav a {
         width: 90%;
-        padding: 10px 0;
+        text-align: center;
+    }
+
+    table img {
+        width: 100px;
+        height: 100px;
     }
 
     table {
-        font-size: 0.9rem;
-    }
-
-    table td img {
-        width: 100px;
-        height: 100px;
+        font-size: 16px;
     }
 }
