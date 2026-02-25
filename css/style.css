@@ -24,7 +24,7 @@ body {
     flex-direction: column;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
     background: linear-gradient(90deg, var(--roxo-claro), var(--roxo-medio), var(--roxo-escuro));
     padding: 20px;
@@ -36,14 +36,15 @@ header h1 {
     margin-bottom: 15px;
 }
 
-/* NAV DO INDEX */
-nav {
+/* NAV do HEADER */
+.header-nav {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-nav a {
+.header-nav a {
     background-color: var(--roxo-claro);
     padding: 10px 20px;
     border-radius: 8px;
@@ -51,21 +52,22 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    font-size: 1rem;
 }
 
-nav a:hover {
+.header-nav a:hover {
     background-color: var(--roxo-escuro);
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
 main {
-    padding: 40px;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     flex: 1;
 }
 
-/* IMAGEM PÁGINA INICIAL */
+/* IMAGEM DA PÁGINA INICIAL */
 .hero-img {
     width: 100%;
     max-width: 450px;
@@ -84,25 +86,25 @@ main {
     box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
-    margin-top: 40px;
     text-align: center;
     background-color: var(--roxo-escuro);
-    margin: 0;
-    padding: 30px 0;
+    padding: 40px 0;
+    width: 100%;
 }
 
-/* FOOTER NAV */
+/* NAV DO FOOTER */
 .footer-nav {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .footer-nav a {
     background-color: var(--roxo-claro);
-    padding: 14px 24px;
+    padding: 12px 22px;
     border-radius: 8px;
     text-decoration: none;
     color: white;
@@ -111,27 +113,27 @@ footer {
 }
 
 .footer-nav a:hover {
-    background-color: var(--roxo-escuro);
+    background-color: var(--roxo-medio);
 }
 
-/* ===== CAIXA DO TREINO ===== */
+/* ================= CAIXA DO TREINO ================= */
 .box-treino {
     background-color: var(--roxo-medio);
     padding: 25px;
     border-radius: 12px;
-    width: 95%;
+    width: 100%;
     max-width: 900px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     overflow-x: auto;
 }
 
-/* ===== TABELA ===== */
+/* ================= TABELA ================= */
 table {
     width: 100%;
     border-collapse: collapse;
     color: white;
-    table-layout: fixed; /* impede a coluna da imagem de estourar */
-    font-size: 20px;
+    table-layout: fixed;
+    font-size: 1.2rem;
 }
 
 th, td {
@@ -142,8 +144,7 @@ th, td {
     word-wrap: break-word;
 }
 
-/* ===== IMAGENS DA TABELA ===== */
-.tabela-img,
+/* IMAGENS DA TABELA */
 table td img {
     width: 150px;
     height: 150px;
@@ -153,66 +154,58 @@ table td img {
     margin: 0 auto;
 }
 
-/* ------------------------------ */
-/* RESPONSIVIDADE PARA CELULAR    */
-/* ------------------------------ */
+/* ================= RESPONSIVIDADE ================= */
 
+/* Tablet e celulares maiores */
 @media (max-width: 768px) {
 
     header h1 {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
 
-    nav, .footer-nav {
-        flex-wrap: wrap;      /* quebra linha se faltar espaço */
-        gap: 10px;
-    }
-
-    nav a, .footer-nav a {
+    .header-nav a {
         padding: 8px 14px;
         font-size: 0.9rem;
     }
 
-    main {
-        padding: 20px;
-    }
-
-    .box-treino {
-        width: 100%;
-        padding: 15px;
-    }
-
     table {
-        font-size: 0.9rem;   /* diminui fonte da tabela */
+        font-size: 1rem;
     }
 
-    th, td {
-        padding: 8px;
-    }
-
-    .tabela-img {
-        width: 60px;
-        height: 60px;
+    table td img {
+        width: 120px;
+        height: 120px;
     }
 }
 
+/* Celulares pequenos */
 @media (max-width: 480px) {
+
+    header {
+        padding: 15px;
+    }
 
     header h1 {
         font-size: 1.4rem;
+        margin-bottom: 10px;
     }
 
-    nav a, .footer-nav a {
-        font-size: 0.8rem;
-        padding: 6px 10px;
+    .header-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-nav a {
+        width: 90%;
+        padding: 10px 0;
     }
 
     table {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
-    .tabela-img {
-        width: 50px;
-        height: 50px;
+    table td img {
+        width: 100px;
+        height: 100px;
     }
 }
