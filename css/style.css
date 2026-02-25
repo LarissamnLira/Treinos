@@ -24,8 +24,7 @@ body {
     flex-direction: column;
 }
 
-/* ================= HEADER =================== */
-
+/* HEADER */
 header {
     background: linear-gradient(90deg, var(--roxo-claro), var(--roxo-medio), var(--roxo-escuro));
     padding: 20px;
@@ -33,148 +32,123 @@ header {
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 15px;
 }
 
-/* ====== NAV (FUNCIONA EM TODAS AS PÁGINAS) ====== */
-
-header nav,
-.header-nav {
+/* NAV DO INDEX */
+nav {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;       /* PERMITE QUEBRAR LINHA */
+    gap: 20px;
 }
 
-header nav a,
-.header-nav a {
+nav a {
     background-color: var(--roxo-claro);
-    padding: 10px 18px;
-    border-radius: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
-    font-size: 1rem;
 }
 
-header nav a:hover,
-.header-nav a:hover {
+nav a:hover {
     background-color: var(--roxo-escuro);
 }
 
-/* ================= MAIN =================== */
-
+/* MAIN */
 main {
-    padding: 20px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     flex: 1;
 }
 
-/* IMAGEM DA PÁGINA INICIAL */
+/* IMAGEM PÁGINA INICIAL */
 .hero-img {
     width: 100%;
     max-width: 450px;
     height: 450px;
     object-fit: cover;
     object-position: top;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-/* ================= FOOTER =================== */
-
-footer {
-    text-align: center;
-    background-color: var(--roxo-escuro);
-    padding: 25px 10px;
-    width: 100%;
-}
-
-/* ================= CAIXA DE TREINO =================== */
-
-.box-treino {
-    background-color: var(--roxo-medio);
-    padding: 20px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 900px;
-    overflow-x: auto;      /* IMPORTANTE: SCROLL NO CELULAR */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-/* ================= TABELA =================== */
-
-table {
-    width: 100%;
-    min-width: 600px;     /* Impede de esmagar no celular */
-    border-collapse: collapse;
-    font-size: 1.1rem;
-}
-
-th, td {
-    padding: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    text-align: center;
-    vertical-align: middle;
-}
-
-/* IMAGENS DA TABELA */
-.tabela-img, table td img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: block;
     margin: 0 auto;
 }
 
-/* ================= RESPONSIVIDADE REAL =================== */
-
-@media (max-width: 768px) {
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header nav a,
-    .header-nav a {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
-
-    .tabela-img, table td img {
-        width: 90px;
-        height: 90px;
-    }
-
-    table {
-        min-width: 500px;
-    }
+.hero-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
 
-@media (max-width: 480px) {
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    background-color: var(--roxo-escuro);
+    margin: 0;
+    padding: 30px 0;
+}
 
-    header nav,
-    .header-nav {
-        flex-direction: column;
-        gap: 8px;
-    }
+/* FOOTER NAV */
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
 
-    header nav a,
-    .header-nav a {
-        width: 100%;
-        text-align: center;
-    }
+.footer-nav a {
+    background-color: var(--roxo-claro);
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
 
-    .tabela-img, table td img {
-        width: 75px;
-        height: 75px;
-    }
+.footer-nav a:hover {
+    background-color: var(--roxo-escuro);
+}
 
-    table {
-        min-width: 420px;
-    }
+/* ===== CAIXA DO TREINO ===== */
+.box-treino {
+    background-color: var(--roxo-medio);
+    padding: 25px;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    overflow-x: auto;
+}
+
+/* ===== TABELA ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    table-layout: fixed; /* impede a coluna da imagem de estourar */
+    font-size: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+/* ===== IMAGENS DA TABELA ===== */
+.tabela-img,
+table td img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
 }
